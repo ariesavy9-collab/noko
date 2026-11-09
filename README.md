@@ -16,6 +16,8 @@ A responsive creator channel built with React (Create React App, not Vite) and a
 
 To make a production frontend bundle, run `npm run build` in `frontend`; the static output is written to `frontend/build`.
 
+For the Vercel deployment, set `REACT_APP_API_URL` to `https://noko-1.onrender.com`. The frontend adds the `/api` prefix automatically. Configure the Render service's `CLIENT_ORIGIN` as `https://nokomashaba.vercel.app` so the API accepts requests from the deployed site.
+
 The backend authenticates to MongoDB Atlas with the database username and password configured in `backend/.env`. The local creator dashboard account is configured in `backend/.env` as `noko@gmail.com` with password `admin`; `npm run seed` creates or updates it in MongoDB. This intentionally weak password is for local testing only—change it before exposing or deploying the app, and use a deployment-specific `JWT_SECRET`. Viewer registration is available in the app. Both `.env` files are excluded from version control.
 
 Users must sign in before liking, commenting, or sharing videos or the channel. The app removes crown icons throughout the UI.
